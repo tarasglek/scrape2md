@@ -1,0 +1,21 @@
+{
+  "name": "scrape2md",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "@opendocsg/pdf2md": "^0.1.28",
+    "jsdom": "^24.0.0",
+    "open-graph-scraper": "^6.3.3",
+    "tsx": "^4.7.0",
+    "turndown": "^7.1.2",
+    "youtube-captions-scraper": "^2.0.1"
+  }
+}
