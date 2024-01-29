@@ -1,5 +1,5 @@
 
-# Web Content to Markdown Converter
+# scrape2md: Web Content to Markdown Converter
 
 This library is designed to scrape web content and convert it into readable Markdown format, suitable for both machine learning models and human readers. It simplifies the process of extracting information from various sources, including HTML pages and PDF documents, and presents it in a clean, structured Markdown format.
 
