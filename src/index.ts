@@ -73,14 +73,18 @@ function ogToMarkdown(ogData: OgObject): string {
 */
 function scrapeableUrl(url: URL): { url: URL; redirect: 'follow' | 'manual', userAgent: string } {
   // Combined regex to match 'x.com' or 'twitter.com' and any subdomains
-  const domainRegex = /^(?:.*\.)?(twitter\.com|x\.com)$/i;
+  const twitter = /^(?:.*\.)?(twitter\.com|x\.com)$/i;
+  const reddit = /^(?:.*\.)?(www\.)?(reddit\.com|redd\.it)$/i;
   const defaults = {
     userAgent: 'curl/7.68.0'
   }
   // Check if the host matches the combined regex
-  if (domainRegex.test(url.host)) {
+  if (twitter.test(url.host)) {
     url.host = "fxtwitter.com";
     // Return the modified URL and directive to not follow redirects
+    return {...defaults, url, redirect: 'manual' };
+  } else if (reddit.test(url.host)) {
+    url.host = "old.reddit.com";
     return {...defaults, url, redirect: 'manual' };
   }
 
@@ -177,7 +181,6 @@ async function htmlToMarkdown(html: string, url: URL): Promise<string> {
 export async function fetchAndConvertToMarkdown(href: string | URL, fetchFunc: typeof fetch): Promise<string> {
   let response;
   const {redirect, url, userAgent} = scrapeableUrl(href instanceof URL ? href : new URL(href));
-  console.log(userAgent)
   try {
     response = await fetchFunc(url, {
       redirect: redirect,

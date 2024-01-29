@@ -14,6 +14,7 @@ This is meant to be a fast lib that can be deployed on serverless platforms like
 - Can scrape following sites:
     * Most articles via Mozilla readability
     * Twitter via OG parsing + fxtwitter.com
+    * Reddit via old.reddit.com
     * Youtube using generated subtitles
     * Comments from sites like hacker news
 
