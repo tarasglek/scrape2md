@@ -13,8 +13,9 @@ This is meant to be a fast lib that can be deployed on serverless platforms like
 - Compatible with both browser and Node.js environments.
 - Can scrape following sites:
     * Most articles via Mozilla readability
-    * twitter via OG parsing + fxtwitter.com
-    * youtube using generated subtitles
+    * Twitter via OG parsing + fxtwitter.com
+    * Youtube using generated subtitles
+    * Comments from sites like hacker news
 
 ## Installation
 
