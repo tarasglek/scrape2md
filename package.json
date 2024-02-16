@@ -1,8 +1,8 @@
 {
   "name": "scrape2md",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": " A package to scrape web content into readable markdown for llms and human readers",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
